@@ -15,26 +15,24 @@ function LunchCheckController($scope){
 
     function countDishes(dishes){
         //Validating empty item
+        console.log(dishes);
+        if(dishes === undefined || dishes === '')
+        {
+            return "Please enter data first";
+        }
         var splitDishes = dishes.split(',').filter((str) => str !== '');
         var numberDishes = splitDishes.length;
-        var message;
 
         //console.log(numberDishes);
 
-        if(numberDishes == 0)
+        if(numberDishes <= 3 )
         {
-            message = "Please enter data first";
-        }
-        else if(numberDishes <= 3 )
-        {
-            message = "Enjoy!";
+            return "Enjoy!";
         }
         else
         {
-            message = "Too much!";
-        }
-        //console.log(message);
-        return message;        
+            return "Too much!";
+        }      
     };
 }
 })();
