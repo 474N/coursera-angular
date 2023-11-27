@@ -25,7 +25,7 @@ function LunchCheckController($scope){
 
         //console.log(numberDishes);
 
-        if(numberDishes <= 3 )
+        if(numberDishes > 0 && numberDishes <= 3 )
         {
             return "Enjoy!";
         }
